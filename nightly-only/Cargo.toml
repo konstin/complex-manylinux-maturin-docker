@@ -15,7 +15,7 @@ classifier = [
 ]
 
 [dependencies]
-pyo3 = { version = "0.13.1", features = ["abi3-py36", "extension-module"] }
+pyo3 = { version = "0.13.1", features = ["extension-module"] }
 
 [lib]
 name = "nightly_only"

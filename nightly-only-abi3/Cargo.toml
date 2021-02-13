@@ -1,0 +1,21 @@
+[package]
+authors = ["konstin <konstin@mailbox.org>"]
+name = "nightly-only-abi3"
+version = "2.1.2"
+description = "Implements a dummy function (get_fortytwo.DummyClass.get_42()) in nightly rust with abi3 support"
+edition = "2018"
+
+[package.metadata.maturin.scripts]
+get_42 = "nightly_only_abi3:DummyClass.get_42"
+
+[package.metadata.maturin]
+classifier = [
+    "Programming Language :: Rust"
+]
+
+[dependencies]
+pyo3 = { version = "0.13.1", features = ["abi3-py36", "extension-module"] }
+
+[lib]
+name = "nightly_only_abi3"
+crate-type = ["cdylib"]

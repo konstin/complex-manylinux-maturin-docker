@@ -1,4 +1,4 @@
-#![feature(box_syntax)] // Make this crate nightly only
+//#![feature(box_syntax)] // Make this crate nightly only
 
 use pyo3::prelude::*;
 
@@ -14,8 +14,8 @@ impl DummyClass {
 }
 
 #[pymodule]
-fn nightly_only(_py: Python, m: &PyModule) -> PyResult<()> {
-    let _five = box 5;
+fn nightly_only_abi3(_py: Python, m: &PyModule) -> PyResult<()> {
+    //let _five = box 5;
 
     m.add_class::<DummyClass>()?;
     m.add("fourtytwo", 42)?;
